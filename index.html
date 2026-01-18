@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva tu Pack de 3 Meses de Hueso de Jibia - Calcio Natural para Aves</title>
-    <meta name="description"
-        content="Asegura el suministro de calcio 100% natural para tu ave por un trimestre. Pack de 3 Huesos de Jibia (300g). Pico sano, dueño tranquilo.">
+    <meta name="description" content="Asegura el suministro de calcio 100% natural para tu ave por un trimestre. Pack de 3 Huesos de Jibia (300g total). Envío gratis.">
     <meta name="keywords" content="hueso de jibia, calcio para aves, suplemento aves, mascotas, aves sanas">
+    <meta name="author" content="TuMarca">
 
     <!-- Favicon placeholder -->
     <link rel="icon" type="image/png" href="product.png">
@@ -46,330 +46,54 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
 
-        /* Header */
-        header {
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
+        /* Aquí puedes continuar con el resto del CSS para el header, productos, footer, etc. */
+        .header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: var(--bg-light);
         }
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 80px 0 60px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            color: var(--text-dark);
-        }
-
-        .hero p {
-            font-size: 1.25rem;
+        .header p {
+            font-size: 1.2rem;
             color: var(--text-gray);
-            max-width: 700px;
-            margin: 0 auto 40px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        /* Main Content Grid */
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            padding-bottom: 100px;
-        }
-
-        .product-image-container {
-            position: relative;
-        }
-
-        .product-image {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .product-image:hover {
-            transform: translateY(-5px);
-        }
-
-        .benefits-list {
-            list-style: none;
-            margin-top: 30px;
-        }
-
-        .benefits-list li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        /* Form Card */
-        .form-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-            border: 1px solid #f0f0f0;
-        }
-
-        .form-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 14px 18px;
-            border: 2px solid #eee;
-            border-radius: 10px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            background-color: #f1f8f1;
-        }
-
-        .cta-button {
-            width: 100%;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 18px;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-            margin-top: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .cta-button:hover {
-            background-color: var(--primary-hover);
-            transform: scale(1.02);
-        }
-
-        .guarantee {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            font-style: italic;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--bg-light);
-            padding: 40px 0;
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-gray);
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .main-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
             }
-
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero {
-                padding: 40px 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .form-card {
-                padding: 25px;
-            }
-        }
-
-        /* Success Animation */
-        .btn-loading {
-            position: relative;
-            color: transparent !important;
-        }
-
-        .btn-loading::after {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            top: 50%;
-            left: 50%;
-            margin-top: -10px;
-            margin-left: -10px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: #fff;
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
+            .header p {
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 
 <body>
+    <div class="container">
+        <header class="header">
+            <h1>Reserva tu Pack de 3 Meses de Hueso de Jibia</h1>
+            <p>Calcio 100% natural para mantener a tus aves sanas y fuertes. Envío rápido y gratuito a todo el país.</p>
+        </header>
 
-    <header>
-        <div class="container text-center">
-            <div class="logo">
-                🌿 JibiaNatural
-            </div>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container transition-up">
-            <h1>Nunca más te quedes sin calcio.<br> <span style="color: var(--primary-color);">Reserva tu Pack de 3
-                    Meses aquí.</span></h1>
-            <p>Asegura el suministro de calcio 100% natural para tu ave por un trimestre. Pico sano, dueño tranquilo.
-            </p>
-        </div>
-    </section>
-
-    <main class="container">
-        <div class="main-grid">
-            <!-- Product Information -->
-            <div class="product-info">
-                <div class="product-image-container">
-                    <img src="product.png" alt="Pack de 3 Huesos de Jibia" class="product-image">
-                </div>
-                <ul class="benefits-list">
-                    <li>✅ Suministro para 3 meses (Pack de 300g).</li>
-                    <li>✅ Calcio natural puro, sin aditivos.</li>
-                    <li>✅ Ahorras tiempo y dinero en envíos recurrentes.</li>
-                    <li>✅ Tu ave tendrá un pico fuerte y saludable.</li>
-                </ul>
-            </div>
-
-            <!-- Conversion Form -->
-            <div class="form-card" id="reservation">
-                <h3>Reserva Exclusiva</h3>
-                <form id="reservationForm">
-                    <div class="form-group">
-                        <label for="name">Nombre completo</label>
-                        <input type="text" id="name" name="name" placeholder="Ej. Juan Pérez" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="whatsapp">Número de WhatsApp</label>
-                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="Ej. +57 300 123 4567" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="city">Ciudad</label>
-                        <input type="text" id="city" name="city" placeholder="Ej. Bogotá" required>
-                    </div>
-                    <button type="submit" class="cta-button" id="submitBtn">
-                        RESERVAR MI PACK (Pago seguro vía WhatsApp)
-                    </button>
-                    <p class="guarantee">
-                        ⭐ <strong>Calificación 4/5 en Mercado Libre</strong><br>
-                        ¡Cientos de dueños de aves confían en la calidad de nuestro calcio natural!
-                    </p>
-                </form>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 JibiaNatural. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <script>
-        // CONFIGURACIÓN: Ingresa aquí el número de WhatsApp que recibirá los pedidos (sin el signo +)
-        const WHATSAPP_NUMBER = "5215559607277"; // Ejemplo: Código país + número
-
-        const form = document.getElementById('reservationForm');
-        const submitBtn = document.getElementById('submitBtn');
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // 1. Mostrar estado de carga en el botón
-            submitBtn.classList.add('btn-loading');
-            submitBtn.disabled = true;
-
-            // 2. Capturar los datos del formulario
-            const name = document.getElementById('name').value;
-            const whatsapp = document.getElementById('whatsapp').value;
-            const city = document.getElementById('city').value;
-
-            // 3. Construir el mensaje predefinido
-            // Formato pedido: "Hola, vengo de la landing page. Quiero reservar mi Pack de 3 Meses. Mis datos son: Nombre: [LO QUE EL USUARIO INGRESÓ], Ciudad: [LO QUE EL USUARIO INGRESÓ]."
-            const baseMessage = `Hola, vengo de la landing page. Quiero reservar mi Pack de 3 Meses. Mis datos son: Nombre: ${name}, Ciudad: ${city}.`;
-
-            // 4. Codificar el mensaje para la URL
-            const encodedMessage = encodeURIComponent(baseMessage);
-
-            // 5. Crear el enlace de WhatsApp
-            // Se puede usar wa.me o api.whatsapp.com. wa.me es más limpio.
-            const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-
-            // 6. Pequeña demora para que el usuario note el feedback visual
-            setTimeout(() => {
-                // Redirigir a WhatsApp
-                window.open(whatsappUrl, '_blank');
-
-                // Restaurar botón (opcional, ya que el usuario ya se fue)
-                submitBtn.classList.remove('btn-loading');
-                submitBtn.disabled = false;
-
-                // Resetear formulario (opcional)
-                // form.reset();
-            }, 800);
-        });
-    </script>
+        <!-- Aquí puedes añadir las secciones de producto, beneficios, formulario de reserva, etc. -->
+        
+        <section style="margin-top: 3rem; text-align: center;">
+            <h2>Próximamente más contenido...</h2>
+            <p>Página en construcción. Agregaremos imágenes, formulario de reserva y detalles del producto pronto.</p>
+        </section>
+    </div>
 </body>
 
 </html>
