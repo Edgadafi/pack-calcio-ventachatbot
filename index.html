@@ -7,10 +7,10 @@
     <title>Reserva tu Pack de 3 Meses de Hueso de Jibia - Calcio Natural para Aves</title>
     <meta name="description" content="Asegura el suministro de calcio 100% natural para tu ave por un trimestre. Pack de 3 Huesos de Jibia (300g total). Envío gratis.">
     <meta name="keywords" content="hueso de jibia, calcio para aves, suplemento aves, mascotas, aves sanas">
-    <meta name="author" content="Pack Calcio Natural">
+    <meta name="author" content="TuMarca">
 
-    <!-- Favicon con emoji de ave -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦜</text></svg>">
+    <!-- Favicon placeholder -->
+    <link rel="icon" type="image/jpeg" href="product.jpg">
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,14 +21,12 @@
         :root {
             --primary-color: #2E7D32;
             --primary-hover: #1b5e20;
-            --secondary-color: #FF9800;
             --text-dark: #212121;
             --text-gray: #616161;
             --bg-light: #f9f9f9;
             --white: #ffffff;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             --transition: all 0.3s ease;
-            --border-radius: 12px;
         }
 
         * {
@@ -51,207 +49,32 @@
             padding: 20px;
         }
 
-        /* Header */
+        /* Aquí puedes continuar con el resto del CSS para el header, productos, footer, etc. */
         .header {
             text-align: center;
-            padding: 4rem 1rem 3rem;
-            background: linear-gradient(135deg, #f8fdf8 0%, #e8f5e9 100%);
-            border-bottom: 1px solid #e0e0e0;
+            padding: 3rem 1rem;
+            background-color: var(--bg-light);
         }
 
         .header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1.2rem;
-            color: var(--primary-color);
-            font-weight: 800;
-        }
-
-        .header .tagline {
-            font-size: 1.4rem;
-            color: var(--text-gray);
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            font-weight: 600;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            align-items: center;
-            margin: 4rem 0;
-        }
-
-        .hero-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .hero-text h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             color: var(--primary-color);
         }
 
-        .hero-text p {
-            font-size: 1.1rem;
+        .header p {
+            font-size: 1.2rem;
             color: var(--text-gray);
-            margin-bottom: 1.5rem;
-        }
-
-        .benefits {
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-
-        .benefits li {
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .benefits li:before {
-            content: "✓";
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* Form Section */
-        .reservation-form {
-            background: var(--bg-light);
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .form-title {
-            text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 14px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            font-family: 'Inter', sans-serif;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
-        }
-
-        .form-note {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            font-style: italic;
-            margin-top: 0.3rem;
-        }
-
-        /* WhatsApp Button */
-        .whatsapp-btn {
-            display: block;
-            width: 100%;
-            background-color: #25D366;
-            color: white;
-            text-align: center;
-            padding: 16px;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            margin-top: 2rem;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        /* Testimonials */
-        .testimonials {
-            margin: 4rem 0;
-            text-align: center;
-        }
-
-        .testimonials h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-        }
-
-        .testimonial-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
-            border-left: 5px solid var(--secondary-color);
         }
 
-        .rating {
-            color: #FFC107;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 2rem;
-            background-color: var(--bg-light);
-            margin-top: 3rem;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .footer p {
-            color: var(--text-gray);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
-            
-            .header .tagline {
-                font-size: 1.1rem;
-            }
-            
-            .hero {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            
-            .reservation-form {
-                padding: 1.5rem;
+            .header p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -260,98 +83,33 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1>Nunca más te quedes sin calcio</h1>
-            <p class="tagline">Reserva tu Pack de 3 Meses aquí</p>
-            <p>Asegura el suministro de calcio 100% natural para tu ave por un trimestre.<br>Pico sano, dueño tranquilo.</p>
+            <h1>Reserva tu Pack de 3 Meses de Hueso de Jibia</h1>
+            <p>Calcio 100% natural para mantener a tus aves sanas y fuertes. Envío rápido y gratuito a todo el país.</p>
         </header>
 
-        <main>
-            <section class="hero">
-                <div class="hero-text">
-                    <h2>Pack de 3 Huesos de Jibia</h2>
-                    <p>Suministro para 3 meses de calcio 100% natural. Ideal para:</p>
-                    <ul class="benefits">
-                        <li>Fortalecimiento de huesos y pico</li>
-                        <li>Prevención de deficiencia de calcio</li>
-                        <li>Muda saludable de plumas</li>
-                        <li>Huevos más fuertes (aves reproductoras)</li>
-                        <li>Comportamiento más activo y saludable</li>
-                    </ul>
-                    <p><strong>Envío gratuito a todo el país</strong></p>
-                </div>
-
-                <div class="reservation-form">
-                    <h3 class="form-title">Reserva Exclusiva</h3>
-                    
-                    <form id="reservationForm">
-                        <div class="form-group">
-                            <label for="name">Nombre completo</label>
-                            <input type="text" id="name" placeholder="Ej. Juan Pérez" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="whatsapp">Número de WhatsApp</label>
-                            <input type="tel" id="whatsapp" placeholder="Ej. +52 1 55 5960 7277" required>
-                            <p class="form-note">Te contactaremos por WhatsApp para confirmar tu reserva</p>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="city">Ciudad</label>
-                            <input type="text" id="city" placeholder="Ej. Bogotá" required>
-                        </div>
-                        
-                        <button type="submit" class="whatsapp-btn">
-                            RESERVAR MI PACK (PAGO SEGURO VÍA WHATSAPP)
-                        </button>
-                    </form>
-                </div>
-            </section>
-
-            <section class="testimonials">
-                <h2>Lo que dicen nuestros clientes</h2>
-                <div class="testimonial-card">
-                    <div class="rating">★★★★★</div>
-                    <p>"Mis canarios están mucho más activos desde que usan el hueso de jibia. El pago por WhatsApp fue súper fácil y el envío llegó al día siguiente."</p>
-                    <p><strong>- María G., Bogotá</strong></p>
-                </div>
-                <p style="margin-top: 2rem; font-size: 1.1rem;">
-                    <strong>Calificación 4.8/5 en Mercado Libre</strong><br>
-                    Cientos de dueños de aves confían en la calidad de nuestro calcio natural
+        <!-- IMAGEN DEL PRODUCTO -->
+        <section style="text-align: center; margin: 2rem 0 3rem 0;">
+            <div style="max-width: 500px; margin: 0 auto; padding: 0 20px;">
+                <img src="product.jpg" 
+                     alt="Pack de 3 Huesos de Jibia - Calcio Natural para Aves" 
+                     style="width: 100%; 
+                            max-height: 400px; 
+                            object-fit: contain; 
+                            border-radius: 12px;
+                            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+                            border: 1px solid #eee;">
+                <p style="margin-top: 1rem; color: #616161; font-size: 1.1rem;">
+                    <strong>Pack de 3 Huesos de Jibia</strong><br>
+                    <span style="color: #2E7D32; font-weight: 600;">300g de calcio 100% natural</span>
                 </p>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <p>© 2024 Pack Calcio Natural para Aves. Todos los derechos reservados.</p>
-            <p>Envíos a toda Colombia | Pago seguro vía WhatsApp</p>
-        </footer>
+            </div>
+        </section>
+        
+        <section style="margin-top: 3rem; text-align: center;">
+            <h2>Próximamente más contenido...</h2>
+            <p>Página en construcción. Agregaremos imágenes, formulario de reserva y detalles del producto pronto.</p>
+        </section>
     </div>
-
-    <script>
-        // Manejo del formulario para WhatsApp
-        document.getElementById('reservationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const whatsapp = document.getElementById('whatsapp').value;
-            const city = document.getElementById('city').value;
-            
-            // Número de WhatsApp (reemplaza con TU número)
-            const phoneNumber = "573001234567"; // EJEMPLO: Cambia por tu número real
-            
-            // Mensaje predefinido
-            const message = `¡Hola! Quiero reservar mi Pack de 3 Meses de Hueso de Jibia.%0A%0A*Mis datos:*%0A📋 Nombre: ${name}%0A📱 WhatsApp: ${whatsapp}%0A🏙️ Ciudad: ${city}%0A%0APor favor, confírmame disponibilidad y método de pago.`;
-            
-            // Abrir WhatsApp
-            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-            
-            // Opcional: Resetear formulario
-            // this.reset();
-            
-            // Opcional: Mostrar mensaje de confirmación
-            alert("¡Perfecto! Serás redirigido a WhatsApp para completar tu reserva.");
-        });
-    </script>
 </body>
 
 </html>
