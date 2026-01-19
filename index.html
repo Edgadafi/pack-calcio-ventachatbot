@@ -2,9 +2,7 @@
 <html lang="es">
 
 <head>
-    
     <link rel="stylesheet" href="style.css">
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva tu Pack de 3 Meses de Hueso de Jibia - Calcio Natural para Aves</title>
@@ -258,11 +256,24 @@
                 transform: rotate(360deg);
             }
         }
+
+        /* Error styling for broken image */
+        .image-error {
+            border: 2px dashed #f44336;
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        
+        .image-error p {
+            margin: 10px 0;
+            font-weight: 600;
+        }
     </style>
 </head>
 
-    <script src="script.js"></script>
-    
 <body>
 
     <header>
@@ -286,8 +297,9 @@
         <div class="main-grid">
             <!-- Product Information -->
             <div class="product-info">
-                <div class="product-image-container">
-                    <img src="images/product.jpg" alt="Pack de 3 Huesos de Jibia" class="product-image">
+                <div class="product-image-container" id="imageContainer">
+                    <!-- La imagen se carga desde la carpeta 'images' -->
+                    <img src="images/product.jpg" alt="Pack de 3 Huesos de Jibia" class="product-image" id="productImage">
                 </div>
                 <ul class="benefits-list">
                     <li>✅ Suministro para 3 meses (Pack de 300g).</li>
@@ -296,7 +308,6 @@
                     <li>✅ Tu ave tendrá un pico fuerte y saludable.</li>
                 </ul>
             </div>
-            
             
             <!-- Conversion Form -->
             <div class="form-card" id="reservation">
@@ -335,6 +346,39 @@
     <script>
         // CONFIGURACIÓN: Ingresa aquí el número de WhatsApp que recibirá los pedidos (sin el signo +)
         const WHATSAPP_NUMBER = "5215559607277"; // Ejemplo: Código país + número
+
+        // Detectar si la imagen no se carga correctamente
+        document.addEventListener('DOMContentLoaded', function() {
+            const productImage = document.getElementById('productImage');
+            const imageContainer = document.getElementById('imageContainer');
+            
+            productImage.onerror = function() {
+                console.error('Error: No se pudo cargar la imagen product.jpg');
+                
+                // Cambiar el contenedor para mostrar un mensaje de error
+                imageContainer.innerHTML = `
+                    <div class="image-error">
+                        <p>⚠️ No se pudo cargar la imagen del producto</p>
+                        <p><strong>Por favor verifica:</strong></p>
+                        <p>1. Que el archivo "product.jpg" existe en la carpeta "images"</p>
+                        <p>2. Que la carpeta "images" esté al mismo nivel que index.html</p>
+                        <p>3. Que el nombre del archivo sea exactamente "product.jpg"</p>
+                        <p style="margin-top: 15px; font-size: 0.9rem;">
+                            Estructura correcta:<br>
+                            📁 tu-proyecto/<br>
+                            &nbsp;&nbsp;├── index.html<br>
+                            &nbsp;&nbsp;└── 📁 images/<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── product.jpg
+                        </p>
+                    </div>
+                `;
+            };
+            
+            // Verificar si la imagen ya está rota (si la página ya cargó)
+            if (productImage.complete && productImage.naturalHeight === 0) {
+                productImage.onerror();
+            }
+        });
 
         const form = document.getElementById('reservationForm');
         const submitBtn = document.getElementById('submitBtn');
