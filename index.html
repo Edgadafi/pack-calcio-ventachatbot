@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva tu Pack de 3 Meses de Hueso de Jibia - Calcio Natural para Aves</title>
@@ -257,19 +256,30 @@
             }
         }
 
-        /* Error styling for broken image */
-        .image-error {
-            border: 2px dashed #f44336;
-            padding: 30px;
-            text-align: center;
+        /* Image fallback styling */
+        .image-fallback {
+            background-color: #f5f5f5;
+            border: 2px dashed #ddd;
             border-radius: 20px;
-            background-color: #ffebee;
-            color: #c62828;
+            padding: 40px;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         
-        .image-error p {
-            margin: 10px 0;
-            font-weight: 600;
+        .image-fallback-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .image-fallback-text {
+            color: var(--text-gray);
+            max-width: 400px;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -297,9 +307,21 @@
         <div class="main-grid">
             <!-- Product Information -->
             <div class="product-info">
-                <div class="product-image-container" id="imageContainer">
-                    <!-- La imagen se carga desde la carpeta 'images' -->
-                    <img src="images/product.jpg" alt="Pack de 3 Huesos de Jibia" class="product-image" id="productImage">
+                <div class="product-image-container">
+                    <!-- IMAGEN CON RUTA CORREGIDA - ELIGE UNA OPCIÓN -->
+                    
+                    <!-- OPCIÓN 1: Si la imagen está en la MISMA carpeta que index.html -->
+                    <img src="product.jpg" alt="Pack de 3 Huesos de Jibia (300g) - Calcio Natural para Aves" class="product-image" id="productImage">
+                    
+                    <!-- OPCIÓN 2: Si la imagen está en carpeta 'images' -->
+                    <!-- <img src="images/product.jpg" alt="Pack de 3 Huesos de Jibia" class="product-image" id="productImage"> -->
+                    
+                    <!-- OPCIÓN 3: Si la imagen está en la raíz del proyecto -->
+                    <!-- <img src="/product.jpg" alt="Pack de 3 Huesos de Jibia" class="product-image" id="productImage"> -->
+                    
+                    <!-- OPCIÓN 4: Ruta relativa -->
+                    <!-- <img src="./product.jpg" alt="Pack de 3 Huesos de Jibia" class="product-image" id="productImage"> -->
+                    
                 </div>
                 <ul class="benefits-list">
                     <li>✅ Suministro para 3 meses (Pack de 300g).</li>
@@ -347,37 +369,53 @@
         // CONFIGURACIÓN: Ingresa aquí el número de WhatsApp que recibirá los pedidos (sin el signo +)
         const WHATSAPP_NUMBER = "5215559607277"; // Ejemplo: Código país + número
 
-        // Detectar si la imagen no se carga correctamente
+        // Manejar error de imagen
         document.addEventListener('DOMContentLoaded', function() {
             const productImage = document.getElementById('productImage');
-            const imageContainer = document.getElementById('imageContainer');
+            const imageContainer = document.querySelector('.product-image-container');
             
             productImage.onerror = function() {
-                console.error('Error: No se pudo cargar la imagen product.jpg');
+                console.log('La imagen no se pudo cargar. Mostrando fallback...');
                 
-                // Cambiar el contenedor para mostrar un mensaje de error
-                imageContainer.innerHTML = `
-                    <div class="image-error">
-                        <p>⚠️ No se pudo cargar la imagen del producto</p>
-                        <p><strong>Por favor verifica:</strong></p>
-                        <p>1. Que el archivo "product.jpg" existe en la carpeta "images"</p>
-                        <p>2. Que la carpeta "images" esté al mismo nivel que index.html</p>
-                        <p>3. Que el nombre del archivo sea exactamente "product.jpg"</p>
-                        <p style="margin-top: 15px; font-size: 0.9rem;">
-                            Estructura correcta:<br>
-                            📁 tu-proyecto/<br>
-                            &nbsp;&nbsp;├── index.html<br>
-                            &nbsp;&nbsp;└── 📁 images/<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── product.jpg
+                // Reemplazar la imagen rota por un mensaje elegante
+                const fallbackHTML = `
+                    <div class="image-fallback">
+                        <div class="image-fallback-icon">🦜</div>
+                        <p class="image-fallback-text"><strong>Pack de 3 Huesos de Jibia (300g)</strong></p>
+                        <p class="image-fallback-text">Suministro de calcio natural para 3 meses</p>
+                        <p class="image-fallback-text" style="font-size: 0.9rem; margin-top: 20px;">
+                            <em>Imagen del producto no disponible temporalmente</em>
                         </p>
                     </div>
                 `;
+                
+                // Reemplazar el contenido del contenedor
+                imageContainer.innerHTML = fallbackHTML;
+                
+                // También podemos intentar cargar una imagen alternativa
+                setTimeout(() => {
+                    // Intentar con diferentes rutas
+                    const alternativePaths = [
+                        'product.jpg',
+                        'images/product.jpg',
+                        './product.jpg',
+                        '/product.jpg',
+                        'https://via.placeholder.com/600x400/2E7D32/FFFFFF?text=Pack+de+3+Huesos+de+Jibia'
+                    ];
+                    
+                    // Probar la primera ruta alternativa
+                    if (alternativePaths[0]) {
+                        productImage.src = alternativePaths[0];
+                    }
+                }, 1000);
             };
             
-            // Verificar si la imagen ya está rota (si la página ya cargó)
-            if (productImage.complete && productImage.naturalHeight === 0) {
-                productImage.onerror();
-            }
+            // Verificar inmediatamente si la imagen ya falló
+            setTimeout(() => {
+                if (productImage.naturalHeight === 0 && productImage.src && !productImage.src.includes('placeholder')) {
+                    productImage.onerror();
+                }
+            }, 1000);
         });
 
         const form = document.getElementById('reservationForm');
@@ -396,14 +434,12 @@
             const city = document.getElementById('city').value;
 
             // 3. Construir el mensaje predefinido
-            // Formato pedido: "Hola, vengo de la landing page. Quiero reservar mi Pack de 3 Meses. Mis datos son: Nombre: [LO QUE EL USUARIO INGRESÓ], Ciudad: [LO QUE EL USUARIO INGRESÓ]."
             const baseMessage = `Hola, vengo de la landing page. Quiero reservar mi Pack de 3 Meses. Mis datos son: Nombre: ${name}, Ciudad: ${city}.`;
 
             // 4. Codificar el mensaje para la URL
             const encodedMessage = encodeURIComponent(baseMessage);
 
             // 5. Crear el enlace de WhatsApp
-            // Se puede usar wa.me o api.whatsapp.com. wa.me es más limpio.
             const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
             // 6. Pequeña demora para que el usuario note el feedback visual
@@ -411,15 +447,11 @@
                 // Redirigir a WhatsApp
                 window.open(whatsappUrl, '_blank');
 
-                // Restaurar botón (opcional, ya que el usuario ya se fue)
+                // Restaurar botón
                 submitBtn.classList.remove('btn-loading');
                 submitBtn.disabled = false;
-
-                // Resetear formulario (opcional)
-                // form.reset();
             }, 800);
         });
     </script>
 </body>
-
 </html>
