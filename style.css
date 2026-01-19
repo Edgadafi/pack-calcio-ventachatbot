@@ -1,0 +1,40 @@
+/* ESTILOS MÍNIMOS PARA LA LANDING PAGE */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1 {
+    color: #2E7D32; /* Verde natural */
+}
+input, button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    background-color: #25D366; /* Verde WhatsApp */
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
